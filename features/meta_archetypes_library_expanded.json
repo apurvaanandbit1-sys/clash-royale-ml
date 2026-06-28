@@ -1,0 +1,139 @@
+{
+  "_meta": {
+    "generated": "2026-06-24",
+    "note_1": "Card pool has grown since your original 121-card / 242-column matrix was likely built: Hero cards (e.g. 'Wizard (Hero)', 'Magic Archer (Hero)') and Evolution variants (e.g. 'Battle Ram (Evo)') now exist as distinct entities in battle logs. If your collector.py predates these, check that your card-to-index mapping isn't silently dropping or NaN-ing newer cards.",
+    "note_2": "win_rate / usage_pct fields are DECK-vs-the-whole-field stats (deck's overall win% against everyone it faced), NOT deck-vs-specific-archetype matchup data. True archetype-vs-archetype matchup tables on RoyaleAPI require a logged-in account and could not be retrieved.",
+    "confidence_levels": {
+      "verified_live": "Pulled directly from royaleapi.com live deck pages, June 2026",
+      "guide_sourced": "From a written deck guide, may be slightly dated or have minor errors - verify card count before using"
+    }
+  },
+  "archetypes": {
+    "GS_EvoRam_HeroWiz_MW": {
+      "cards": ["Barbarian Barrel", "Battle Ram (Evo)", "Giant Skeleton", "Mother Witch", "Royal Ghost (Evo)", "Vines", "Wizard (Hero)", "Zappies"],
+      "win_rate": 0.578, "usage_pct": 0.002, "confidence": "verified_live"
+    },
+    "EvoMortar_Cart_HeroGobs_Bait": {
+      "cards": ["Barbarian Barrel", "Cannon Cart", "Fireball", "Goblins (Hero)", "Minions", "Mortar (Evo)", "Rascals", "Skeleton Barrel (Evo)"],
+      "win_rate": 0.553, "usage_pct": 0.012, "confidence": "verified_live"
+    },
+    "Pekka_Bandit_EWiz_EvoGhost": {
+      "cards": ["Bandit", "Battle Ram (Evo)", "Electro Wizard", "Fireball", "Magic Archer (Hero)", "P.E.K.K.A", "Royal Ghost (Evo)", "Zap"],
+      "win_rate": 0.557, "usage_pct": 0.005, "confidence": "verified_live"
+    },
+    "RHogs_EvoRR_FM_Zappies": {
+      "cards": ["Arrows", "Barbarian Barrel (Hero)", "Electro Spirit", "Flying Machine", "Goblin Cage (Evo)", "Royal Hogs", "Royal Recruits (Evo)", "Zappies"],
+      "win_rate": 0.552, "usage_pct": 0.003, "confidence": "verified_live"
+    },
+    "LH_DoubleDragon_EvoValk": {
+      "cards": ["Balloon (Hero)", "Fireball", "Inferno Dragon (Evo)", "Lava Hound", "Skeleton Dragons", "Tombstone", "Valkyrie (Evo)", "Zap"],
+      "win_rate": 0.558, "usage_pct": 0.002, "confidence": "verified_live"
+    },
+    "HeroKnight_LogBait_2.9": {
+      "cards": ["Dart Goblin", "Goblin Barrel (Evo)", "Ice Spirit", "Inferno Tower", "Knight (Hero)", "Princess", "Skeleton Army (Evo)", "The Log"],
+      "win_rate": 0.538, "usage_pct": 0.006, "confidence": "verified_live"
+    },
+    "Hog_HeroIG_2.6_Cycle": {
+      "cards": ["Cannon (Evo)", "Fireball", "Hog Rider", "Ice Golem (Hero)", "Ice Spirit", "Musketeer", "Skeletons (Evo)", "The Log"],
+      "win_rate": 0.53, "usage_pct": 0.003, "confidence": "verified_live",
+      "note": "win_rate here is from the larger-sample deck-stats page (37,440 games); the popular-decks page showed 54.6% on a smaller recent window"
+    },
+    "EvoRG_FishBoy_Hunter_3.0": {
+      "cards": ["Barbarian Barrel (Hero)", "Electro Spirit", "Fireball", "Fisherman", "Hunter", "Royal Ghost (Evo)", "Royal Giant (Evo)", "Skeletons"],
+      "win_rate": 0.532, "usage_pct": 0.006, "confidence": "verified_live"
+    },
+    "Evo_WB_Berserker_Bats_2.6": {
+      "cards": ["Bats (Evo)", "Berserker", "Bomb Tower", "Fire Spirit", "Magic Archer (Hero)", "Miner", "Royal Delivery", "Wall Breakers (Evo)"],
+      "win_rate": 0.529, "usage_pct": 0.007, "confidence": "verified_live"
+    },
+    "ThreeMusketeers_BridgeSpam": {
+      "cards": ["Bandit", "Barbarian Barrel (Hero)", "Battle Ram (Evo)", "Elixir Collector", "Hunter", "Ice Golem", "Royal Ghost (Evo)", "Three Musketeers"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "RoyalGiant_Control_Firecracker": {
+      "cards": ["Barbarian Barrel (Hero)", "Electro Spirit", "Firecracker", "Goblin Cage (Evo)", "Inferno Dragon", "Lightning", "Royal Giant (Evo)", "Skeletons"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "Giant_Witch_Beatdown": {
+      "cards": ["Archers", "Arrows", "Fireball", "Giant", "Goblin Hut", "Mini P.E.K.K.A", "Minions", "Witch"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck - classic long-running archetype"
+    },
+    "MegaKnight_BridgeSpam": {
+      "cards": ["Arrows", "Bandit", "Battle Ram (Evo)", "Electro Wizard", "Golden Knight", "Mega Knight (Evo)", "Mother Witch", "Skeleton Dragons"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "WallBreakers_Bait": {
+      "cards": ["Dark Prince (Hero)", "Dart Goblin", "Fire Spirit", "Goblin Barrel (Evo)", "Ice Spirit", "Royal Delivery", "Tesla", "Wall Breakers (Evo)"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "ElectroGiant_Phoenix": {
+      "cards": ["Barbarian Barrel", "Bomber (Evo)", "Cannon (Evo)", "Electro Giant", "Golden Knight", "Lightning", "Phoenix", "Tornado"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "RoyalHogs_Hero_AQ": {
+      "cards": ["Archer Queen", "Earthquake", "Fire Spirit", "Guards", "Royal Delivery", "Royal Hogs (Evo)", "Tesla (Evo)", "The Log"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "Golem_Beatdown_RamRider": {
+      "cards": ["Bats (Evo)", "Cannon", "Electro Dragon (Evo)", "Golem", "Magic Archer", "Mini P.E.K.K.A (Hero)", "Ram Rider", "Tornado"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "XBow_Cycle": {
+      "cards": ["Archer Queen", "Cannon (Evo)", "Electro Spirit", "Fireball", "Knight", "Skeletons (Evo)", "The Log", "X-Bow"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "RoyalHogs_AQ_v2": {
+      "cards": ["Archer Queen", "Cannon (Evo)", "Earthquake", "Fire Spirit", "Royal Delivery", "Royal Hogs (Evo)", "Skeletons", "The Log"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "ElectroGiant_Bowler_Nado_v2": {
+      "cards": ["Barbarian Barrel", "Bowler (Hero)", "Electro Giant", "Goblin Cage (Evo)", "Ice Wizard", "Inferno Dragon (Evo)", "Lightning", "Tornado"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "RoyalGiant_Monk": {
+      "cards": ["Barbarian Barrel", "Electro Spirit", "Fireball", "Fisherman", "Hunter (Evo)", "Monk", "Royal Giant (Evo)", "Skeletons"],
+      "confidence": "verified_live", "source_note": "12-win Grand Challenge deck"
+    },
+    "LogBait_Classic": {
+      "cards": ["Knight", "Goblin Barrel", "Princess", "Goblin Gang", "Ice Spirit", "Inferno Tower", "Rocket"],
+      "confidence": "guide_sourced",
+      "warning": "Source only listed 7 cards for an 8-card deck - missing card not specified, likely a second cycle card. Verify before using."
+    },
+    "Hog_2.6_Cycle_Classic": {
+      "cards": ["Cannon", "Fireball", "Hog Rider", "Ice Golem", "Ice Spirit", "Musketeer", "Skeletons", "The Log"],
+      "confidence": "guide_sourced"
+    },
+    "Hog_2.8_Cycle_Classic": {
+      "cards": ["Hog Rider", "Tesla", "Earthquake", "Knight", "Ice Spirit", "Musketeer", "Skeletons", "The Log"],
+      "confidence": "guide_sourced"
+    },
+    "LavaLoon_Classic": {
+      "cards": ["Lava Hound", "Balloon", "Fireball", "Guards", "Mega Minion", "Skeleton Dragons", "Tombstone", "Zap"],
+      "confidence": "guide_sourced"
+    },
+    "LumberLoon_Freeze": {
+      "cards": ["Lumberjack", "Balloon", "Baby Dragon", "Inferno Dragon", "Bowler", "Freeze", "Tornado", "Barbarian Barrel"],
+      "confidence": "guide_sourced"
+    },
+    "RoyalGiant_Ghost_Classic": {
+      "cards": ["Royal Giant", "Royal Ghost", "Fisherman", "Hunter", "Electro Spirit", "Lightning", "Skeletons", "The Log"],
+      "confidence": "guide_sourced"
+    },
+    "Miner_Poison_2.8": {
+      "cards": ["Miner", "Poison", "Knight", "Tesla", "Bats", "Skeletons", "Royal Delivery", "The Log"],
+      "confidence": "guide_sourced"
+    },
+    "ElectroGiant_Bowler_Nado_Classic": {
+      "cards": ["Electro Giant", "Bowler", "Tornado", "Lightning", "Tesla", "Knight", "Little Prince", "Barbarian Barrel"],
+      "confidence": "guide_sourced"
+    },
+    "Giant_Graveyard": {
+      "cards": ["Giant", "Graveyard", "Little Prince", "Bowler", "Archers", "Goblin Gang", "Arrows", "Snowball"],
+      "confidence": "guide_sourced"
+    },
+    "Ultimate_Punisher": {
+      "cards": ["P.E.K.K.A", "Royal Hogs", "Magic Archer", "Hunter", "Knight", "Guards", "Arrows", "Zap"],
+      "confidence": "guide_sourced"
+    }
+  }
+}

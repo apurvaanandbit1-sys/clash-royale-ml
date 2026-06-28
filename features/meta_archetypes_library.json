@@ -1,0 +1,222 @@
+{
+    "hog_2_6_classic": [
+        "hog-rider",
+        "musketeer",
+        "ice-golem",
+        "skeletons",
+        "ice-spirit",
+        "cannon",
+        "the-log",
+        "fireball"
+    ],
+    "hog_quake_firecracker": [
+        "hog-rider",
+        "firecracker",
+        "knight",
+        "skeletons",
+        "ice-spirit",
+        "tesla",
+        "the-log",
+        "earthquake"
+    ],
+    "hog_exegaze_heavy": [
+        "hog-rider",
+        "executioner",
+        "valkyrie",
+        "goblins",
+        "ice-spirit",
+        "tornado",
+        "the-log",
+        "rocket"
+    ],
+    "miner_poison_control": [
+        "miner",
+        "poison",
+        "knight",
+        "goblins",
+        "ice-spirit",
+        "tesla",
+        "the-log",
+        "delivery"
+    ],
+    "goblin_drill_cycle": [
+        "goblin-drill",
+        "bomber",
+        "firecracker",
+        "wall-breakers",
+        "knight",
+        "skeletons",
+        "tesla",
+        "the-log"
+    ],
+    "golem_night_witch_classic": [
+        "golem",
+        "night-witch",
+        "baby-dragon",
+        "mega-minion",
+        "lumberjack",
+        "tornado",
+        "lightning",
+        "barbarian-barrel"
+    ],
+    "golem_healer_elixir_pump": [
+        "golem",
+        "elixir-collector",
+        "battle-healer",
+        "electro-dragon",
+        "night-witch",
+        "tornado",
+        "barbarian-barrel",
+        "rage"
+    ],
+    "lava_loon_classic": [
+        "lava-hound",
+        "balloon",
+        "mega-minion",
+        "minions",
+        "tombstone",
+        "barbarians",
+        "fireball",
+        "zap"
+    ],
+    "lava_miner_clone": [
+        "lava-hound",
+        "miner",
+        "skeleton-barrel",
+        "flying-machine",
+        "clone",
+        "bats",
+        "barbarians",
+        "zap"
+    ],
+    "egiant_bowler_tornado": [
+        "electro-giant",
+        "bowler",
+        "baby-dragon",
+        "mega-minion",
+        "golden-knight",
+        "tornado",
+        "lightning",
+        "barbarian-barrel"
+    ],
+    "giant_graveyard_beatdown": [
+        "giant",
+        "graveyard",
+        "bowler",
+        "night-witch",
+        "bats",
+        "arrows",
+        "giant-snowball",
+        "musketeer"
+    ],
+    "electro_giant_lightning_cycle": [
+        "electro-giant",
+        "lightning",
+        "bomber",
+        "cannon-cart",
+        "golden-knight",
+        "baby-dragon",
+        "barbarian-barrel",
+        "tornado"
+    ],
+    "pekka_bridge_spam_classic": [
+        "pekka",
+        "battle-ram",
+        "bandit",
+        "royal-ghost",
+        "electro-wizard",
+        "magic-archer",
+        "zap",
+        "poison"
+    ],
+    "pekka_ram_rider_bolted": [
+        "pekka",
+        "ram-rider",
+        "bandit",
+        "electro-wizard",
+        "royal-ghost",
+        "barbarian-barrel",
+        "lightning",
+        "giant-snowball"
+    ],
+    "mega_knight_spam_miners": [
+        "mega-knight",
+        "bandit",
+        "royal-ghost",
+        "electro-wizard",
+        "miner",
+        "wall-breakers",
+        "bats",
+        "zap"
+    ],
+    "royal_recruits_hogs_split": [
+        "royal-recruits",
+        "royal-hogs",
+        "flying-machine",
+        "zappies",
+        "goblin-cage",
+        "barbarian-barrel",
+        "arrows",
+        "electro-spirit"
+    ],
+    "log_bait_classic_2_9": [
+        "princess",
+        "goblin-barrel",
+        "goblin-gang",
+        "knight",
+        "skeletons",
+        "inferno-tower",
+        "the-log",
+        "rocket"
+    ],
+    "log_bait_valk_tesla": [
+        "princess",
+        "goblin-barrel",
+        "goblin-gang",
+        "valkyrie",
+        "tesla",
+        "the-log",
+        "rocket",
+        "ice-spirit"
+    ],
+    "mega_knight_zap_bait": [
+        "mega-knight",
+        "goblin-barrel",
+        "skeleton-barrel",
+        "miner",
+        "goblin-gang",
+        "bats",
+        "spear-goblins",
+        "zap"
+    ],
+    "mortar_bait_miner": [
+        "mortar",
+        "miner",
+        "goblin-gang",
+        "spear-goblins",
+        "minion-horde",
+        "minions",
+        "the-log",
+        "fireball"
+    ],
+    "xbow_2_9_classic": [
+        "x-bow",
+        "tesla",
+        "knight",
+        "archers",
+        "skeletons",
+        "ice-spirit",
+        "the-log",
+        "fireball"
+    ],
+    "ice_bow_rocket_turtle": [
+        "x-bow",
+        "tesla",
+        "knight",
+        "ice-wizard",
+        "tornado",
+        "the-log",
+        "rocket",
+        "skeletons"
+    ]
+}
