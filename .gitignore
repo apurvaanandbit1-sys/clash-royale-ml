@@ -24,3 +24,9 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Temporary downloads
+downloads/
+
+# Local reports
+project_inspection_report.pdf

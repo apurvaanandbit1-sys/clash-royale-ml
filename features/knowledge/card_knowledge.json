@@ -1,134 +1,883 @@
 {
-  "Knight": {
-    "structural": {
-      "card_type": "TROOP",
-      "movement_type": "GROUND",
-      "movement_speed": "MEDIUM",
-      "attack_style": "MELEE",
-      "targets": "GROUND"
+    "Knight": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "MEDIUM",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "HIGH",
+            "dps_level": "MEDIUM",
+            "attack_speed": "FAST",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "MINI_TANK",
+            "secondary_roles": [
+                "DEFENSE",
+                "COUNTERPUSH"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "tank",
+            "ground",
+            "melee",
+            "single_target",
+            "defensive",
+            "counterpush"
+        ]
     },
-
-    "combat": {
-        "hp_level": "HIGH",
-        "dps_level": "MEDIUM",
-        "attack_speed": "FAST",
-        "attack_range": "MELEE",
-
-        "splash_damage": false,
-        "piercing_attack": false,
-        "chain_attack": false,
-
-        "can_attack_air": false,
-        "can_attack_ground": true,
-
-        "charge": false,
-        "knockback": false,
-        "reset": false
-    },
-
-    "abilities": {
-        "death_damage": false,
-        "spawn_damage": false,
-        "spawn_units": null,
-        "heal": false,
-        "freeze": false,
-        "reset": false,
-        "dash": false,
-        "chain_attack": false,
-        "rage_aura": false,
-        "evolution_ability": true,
-        "unique_abilities": []
-    },
-
-    "strategic": {
-        "primary_role": "MINI_TANK",
-
-        "secondary_roles": [
-            "DEFENSE",
-            "COUNTERPUSH"
-        ],
-
-        "win_condition": false,
-        "support_card": true,
-        "cycle_card": false,
-
-        "archetypes": []
-    },
-
-    "tags": [
-      "tank",
-      "ground",
-      "melee",
-      "single_target",
-      "defensive",
-      "counterpush"
-    ]
-  },
-
     "Valkyrie": {
-    "structural": {
-        "card_type": "TROOP",
-        "movement_type": "GROUND",
-        "movement_speed": "MEDIUM",
-        "attack_style": "MELEE",
-        "targets": "GROUND"
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "MEDIUM",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "HIGH",
+            "dps_level": "MEDIUM",
+            "attack_speed": "MEDIUM",
+            "attack_range": "MELEE",
+            "splash_damage": true,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "MINI_TANK",
+            "secondary_roles": [
+                "DEFENSE",
+                "COUNTERPUSH"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "tank",
+            "ground",
+            "melee",
+            "splash",
+            "defensive",
+            "counterpush"
+        ]
     },
-
-    "combat": {
-        "hp_level": "HIGH",
-        "dps_level": "MEDIUM",
-        "attack_speed": "MEDIUM",
-        "attack_range": "MELEE",
-
-        "splash_damage": true,
-        "piercing_attack": false,
-        "chain_attack": false,
-
-        "can_attack_air": false,
-        "can_attack_ground": true,
-
-        "charge": false,
-        "knockback": false,
-        "reset": false
+    "Skeletons": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "VERY_LOW",
+            "dps_level": "LOW",
+            "attack_speed": "FAST",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "CYCLE",
+            "secondary_roles": [
+                "DEFENSE"
+            ],
+            "win_condition": false,
+            "support_card": false,
+            "cycle_card": true,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "swarm",
+            "cycle",
+            "distraction"
+        ]
     },
-
-    "abilities": {
-        "death_damage": false,
-        "spawn_damage": false,
-        "spawn_units": null,
-        "heal": false,
-        "freeze": false,
-        "reset": false,
-        "dash": false,
-        "chain_attack": false,
-        "rage_aura": false,
-        "evolution_ability": true,
-        "unique_abilities": []
+    "P.E.K.K.A.": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "SLOW",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": null,
+            "dps_level": null,
+            "attack_speed": "SLOW",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "TANK",
+            "secondary_roles": [
+                "COUNTERPUSH"
+            ],
+            "win_condition": false,
+            "support_card": false,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "tank_killer",
+            "high_damage",
+            "defense",
+            "heavy"
+        ]
     },
-
-    "strategic": {
-        "primary_role": "MINI_TANK",
-
-        "secondary_roles": [
-        "DEFENSE",
-        "COUNTERPUSH"
-        ],
-
-        "win_condition": false,
-        "support_card": true,
-        "cycle_card": false,
-
-        "archetypes": []
+    "Battle Ram": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "MEDIUM",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "MEDIUM",
+            "dps_level": null,
+            "attack_speed": null,
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": true,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": "BARBARIANS",
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "WIN_CONDITION",
+            "secondary_roles": [
+                "BRIDGE_SPAM"
+            ],
+            "win_condition": true,
+            "support_card": false,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "win_condition",
+            "bridge_spam",
+            "building_target",
+            "spawner"
+        ]
     },
-
-    "tags": [
-        "tank",
-        "ground",
-        "melee",
-        "splash",
-        "defensive",
-        "counterpush"
-    ]
+    "Sparky": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "SLOW",
+            "attack_style": "AREA",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": null,
+            "dps_level": null,
+            "attack_speed": "VERY_SLOW",
+            "attack_range": "MEDIUM",
+            "splash_damage": true,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": true
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "SPLASH_SUPPORT",
+            "secondary_roles": [
+                "BAIT"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "ranged",
+            "splash",
+            "high_damage",
+            "defense"
+        ]
     },
-    
+    "Little Prince": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "MEDIUM",
+            "attack_style": "RANGED",
+            "targets": "BOTH"
+        },
+        "combat": {
+            "hp_level": "LOW",
+            "dps_level": "MEDIUM",
+            "attack_speed": "FAST",
+            "attack_range": "LONG",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": true,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": [
+                "Champion Ability (Royal Rescue)"
+            ]
+        },
+        "strategic": {
+            "primary_role": "SUPPORT",
+            "secondary_roles": [
+                "BAIT"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "champion",
+            "ranged",
+            "single_target",
+            "support",
+            "spawner"
+        ]
+    },
+    "Cannon": {
+        "structural": {
+            "card_type": "BUILDING",
+            "movement_type": "STATIC",
+            "movement_speed": null,
+            "attack_style": "RANGED",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "MEDIUM",
+            "dps_level": "HIGH",
+            "attack_speed": "FAST",
+            "attack_range": "LONG",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": [
+                "Lifetime (30 Seconds)"
+            ]
+        },
+        "strategic": {
+            "primary_role": "DEFENSIVE_BUILDING",
+            "secondary_roles": [
+                "DEFENSE"
+            ],
+            "win_condition": false,
+            "support_card": false,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "building",
+            "ground",
+            "ranged",
+            "single_target",
+            "defense"
+        ]
+    },
+    "Royal Delivery": {
+        "structural": {
+            "card_type": "SPELL",
+            "movement_type": "STATIC",
+            "movement_speed": null,
+            "attack_style": "AREA",
+            "targets": "BOTH"
+        },
+        "combat": {
+            "hp_level": null,
+            "dps_level": null,
+            "attack_speed": null,
+            "attack_range": "SHORT",
+            "splash_damage": true,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": true,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": true,
+            "spawn_units": "ROYAL RECRUIT",
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": [
+                "3.0 Second Deployment Delay"
+            ]
+        },
+        "strategic": {
+            "primary_role": "SPELL",
+            "secondary_roles": [
+                "DEFENSE"
+            ],
+            "win_condition": false,
+            "support_card": false,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "spell",
+            "splash",
+            "defense",
+            "spawner"
+        ]
+    },
+    "Skeleton Army": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "VERY_LOW",
+            "dps_level": "VERY_HIGH",
+            "attack_speed": "FAST",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": [
+                "Swarm Generation"
+            ]
+        },
+        "strategic": {
+            "primary_role": "SWARM",
+            "secondary_roles": [
+                "BAIT"
+            ],
+            "win_condition": false,
+            "support_card": false,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "swarm",
+            "defense",
+            "tank_killer",
+            "spell_bait"
+        ]
+    },
+    "Berserker": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "MEDIUM",
+            "dps_level": "MEDIUM",
+            "attack_speed": "VERY_FAST",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "SUPPORT",
+            "secondary_roles": [
+                "DEFENSE"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": true,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "cycle",
+            "defense",
+            "single_target"
+        ]
+    },
+    "Rage": {
+        "structural": {
+            "card_type": "SPELL",
+            "movement_type": "STATIC",
+            "movement_speed": null,
+            "attack_style": "AREA",
+            "targets": "BOTH"
+        },
+        "combat": {
+            "hp_level": null,
+            "dps_level": null,
+            "attack_speed": null,
+            "attack_range": "SHORT",
+            "splash_damage": true,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": true,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": true,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": true,
+            "evolution_ability": false,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "SPELL",
+            "secondary_roles": [
+                "SWARM_KILLER"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": true,
+            "archetypes": []
+        },
+        "tags": [
+            "spell",
+            "splash",
+            "support",
+            "cycle"
+        ]
+    },
+    "Firecracker": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "AREA",
+            "targets": "BOTH"
+        },
+        "combat": {
+            "hp_level": "LOW",
+            "dps_level": "MEDIUM",
+            "attack_speed": "VERY_SLOW",
+            "attack_range": "LONG",
+            "splash_damage": true,
+            "piercing_attack": true,
+            "chain_attack": false,
+            "can_attack_air": true,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": true,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": true,
+            "unique_abilities": []
+        },
+        "strategic": {
+            "primary_role": "SPLASH_SUPPORT",
+            "secondary_roles": [
+                "BAIT",
+                "AIR_DEFENSE"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ranged",
+            "splash",
+            "support",
+            "air_defense"
+        ]
+    },
+    "Giant": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "SLOW",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "VERY_HIGH",
+            "dps_level": "MEDIUM",
+            "attack_speed": "MEDIUM",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": [
+                "Hero Form"
+            ]
+        },
+        "strategic": {
+            "primary_role": "WIN_CONDITION",
+            "secondary_roles": [
+                "TANK"
+            ],
+            "win_condition": true,
+            "support_card": false,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "tank",
+            "win_condition",
+            "building_target"
+        ]
+    },
+    "Miner": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": null,
+            "dps_level": null,
+            "attack_speed": null,
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": [
+                "Unrestricted Deployment, Reduced Tower Damage"
+            ]
+        },
+        "strategic": {
+            "primary_role": "WIN_CONDITION",
+            "secondary_roles": [
+                "CHIP_DAMAGE",
+                "ASSASSIN"
+            ],
+            "win_condition": true,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "mini_tank",
+            "win_condition",
+            "unrestricted_placement"
+        ]
+    },
+    "Mini P.E.K.K.A.": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "MEDIUM",
+            "dps_level": "VERY_HIGH",
+            "attack_speed": "SLOW",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": [
+                "Hero Form"
+            ]
+        },
+        "strategic": {
+            "primary_role": "MINI_TANK",
+            "secondary_roles": [
+                "TANK_KILLER",
+                "DEFENSE"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "tank_killer",
+            "high_damage",
+            "defense",
+            "single_target"
+        ]
+    }
 }
