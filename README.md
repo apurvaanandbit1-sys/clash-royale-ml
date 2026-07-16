@@ -1,6 +1,20 @@
-# Clash Royale Matchup Predictor
+# Clash Royale ML
 
-A machine learning pipeline designed to predict the win probability of Clash Royale battles using engineered deck-level features.
+Predicting Clash Royale match outcomes using engineered gameplay features and machine learning.
+
+---
+
+### ⚠️ Active Development
+
+Current implementation status:
+
+*   ✅ Data Collection
+*   ✅ Knowledge Base
+*   ✅ Feature Engineering
+*   ✅ Preprocessing
+*   🚧 Model Training
+*   🚧 Evaluation
+*   📅 Deployment
 
 ---
 
@@ -12,91 +26,112 @@ Predicting match outcomes based on deck composition is a challenging machine lea
 
 ---
 
-## 2. Project Motivation
+## 2. Project Goals
 
-Typical machine learning approaches to card game matchups rely on raw card IDs as sparse, high-cardinality indicators. This forces the model to learn every mechanical property from scratch, leading to high data requirements and poor generalization to new or custom deck combinations.
-
-This project overcomes these limitations by utilizing **engineered gameplay features**. We project the high-cardinality card matrix into a dense, interpretable feature space by mapping cards to domain-specific metadata (such as elixir costs, troop roles, splash damage capability, and durability indices). This allows our models to generalize predictions to completely unseen decks by analyzing their mechanical compositions and tactical behaviors.
-
----
-
-## 3. Current Features
-
-* **Seed-Based BFS Collector**: Traverses player logs starting from high-trophy competitive seed players to assemble a database of high-level matches.
-* **Metadata-Rich SQLite Database**: Custom schema storing battle records, raw API JSON payloads, card level mappings, arena names, and collector version metadata.
-* **Card Knowledge Base**: Granular combat classification mapping structural roles, hitpoints, and combat styles for all 122 playable cards (including *Ronin*).
-* **Feature Engineering Engine**: Extracts 12 deck-level features (including elixir averages, spell/building ratios, evolution and champion indicators, and durability/damage indices).
-* **Parquet Preprocessing**: Cleans duplicates, enforces 8-card length constraints, and compiles the SQLite records into Parquet format.
-* **Automated Unit Tests**: Test suites verifying database integrity, library size constraints, and feature engineering outputs.
+The long-term objectives of this project are:
+*   **Predict Win Probability**: Calculate the probability that a player's deck beats an opponent's deck.
+*   **Generalize to Unseen Combinations**: Predict outcomes of custom or new decks that have never been seen in the training set.
+*   **Utilize Engineered Gameplay Features**: Project card IDs into a dense, interpretable feature space representing mechanical properties (elixir costs, troop roles, splash damage capability) instead of using sparse high-cardinality indicators.
+*   **Produce Interpretable ML Predictions**: Provide clear feature importance breakdowns showing *why* a particular matchup outcome is predicted.
 
 ---
 
-## 4. Architecture
+## 3. ML Prediction Objective
 
 ```
-   Official Clash Royale API
-               │
-               ▼
-        Battle Collector
-               │
-               ▼
-     SQLite Database (data/clashroyale.db)
-               │
-               ▼
-   Preprocessing Pipeline (preprocessing/preprocess.py)
-               │
-               ▼
-   Feature Engineering (features/feature_engine.py)
-               │
-               ▼
-     Engineered Dataset (matches_with_features.parquet)
-               │
-               ▼
-    Machine Learning Model (planned training pipeline)
+Input:
+  - Player Deck:   8 cards (e.g., Hog Cycle)
+  - Opponent Deck: 8 cards (e.g., Splashyard)
+
+Output:
+  - Probability(Player Wins) (e.g., 61.8%*)
+```
+*\*Note: This is an illustrative example of model output, not an actual prediction.*
+
+---
+
+## 4. Current Dataset Status
+
+*   **Battles Collected**: 8 battles
+*   **Purpose**: Pipeline verification and validation (V&V)
+*   **Target Database**: 100,000+ battles
+
+The pipeline currently runs on a small verified dataset of competitive matches from players with $\ge 8,500$ trophies. Once model training is initialized, the collector will be run to scale the dataset.
+
+---
+
+## 5. Architecture
+
+```
+         Official Clash Royale API
+                     │
+                     ▼
+              Battle Collector
+                     │
+                     ▼
+               SQLite Database
+                     │
+                     ▼
+            Card Knowledge Base
+                     │
+                     ▼
+            Feature Engineering
+                     │
+                     ▼
+            Preprocessing Loop
+                     │
+                     ▼
+             Training Dataset
+                     │
+                     ▼
+          Machine Learning Model
+                     │
+                     ▼
+         Prediction API (planned)
 ```
 
 ---
 
-## 5. Repository Structure
+## 6. Repository Structure
 
-* [collector/](file:///c:/projects/clash-royale-ml/collector/): API credentials handler, JSON response parser, and breadth-first crawler loop.
-* [database/](file:///c:/projects/clash-royale-ml/database/): SQLite database storage schemas and initialization scripts.
-* [features/](file:///c:/projects/clash-royale-ml/features/): Card definitions registry, tactical card knowledge base, and feature engineering extraction modules.
-* [preprocessing/](file:///c:/projects/clash-royale-ml/preprocessing/): Data transformation pipeline to load SQLite records and output Parquet matrices.
-* [training/](file:///c:/projects/clash-royale-ml/training/): Module designated for baseline and ensemble classifier model training.
-* [tests/](file:///c:/projects/clash-royale-ml/tests/): Test suites validating data storage, library lengths, and feature extraction.
-* [docs/](file:///c:/projects/clash-royale-ml/docs/): Research logs, enums definitions, and project audits.
-
----
-
-## 6. Technology Stack
-
-* **Python**: Core programming language.
-* **SQLite**: Transactional database warehouse.
-* **Pandas**: Structured dataset transformations.
-* **NumPy**: Vectorized numeric operations.
-* **Scikit-learn**: Data utilities and baseline modeling.
-* **Pyarrow**: High-performance Parquet file read/write operations.
-* **XGBoost (planned)**: Gradient boosted trees classifier.
-* **FastAPI (planned)**: Real-time prediction web API.
+*   `collector/`: API client, JSON log parser, and BFS crawler.
+*   `database/`: SQLite table setup and database storage schemas.
+*   `features/`: Card definitions, strategic gameplay knowledge base, and feature extraction.
+*   `preprocessing/`: Preprocessing loop that cleans duplicates and outputs Parquet datasets.
+*   `training/`: Dedicated module for baseline models and ensemble classifiers.
+*   `tests/`: Unit test suite verifying databases, libraries, and feature outputs.
+*   `docs/`: Analysis reports, gameplay enums, and project audits.
 
 ---
 
-## 7. Project Status
+## 7. Technology Stack
+
+*   **Python**: Core programming language.
+*   **SQLite**: Warehouse database.
+*   **Pandas**: Dataset matrix manipulation.
+*   **NumPy**: Array mathematics.
+*   **Scikit-learn**: Data utilities and baseline models.
+*   **Pyarrow**: High-performance Parquet format read/write.
+*   **XGBoost (planned)**: Gradient boosted trees.
+*   **FastAPI (planned)**: Microservice web API.
+
+---
+
+## 8. Project Status
 
 | Component | Status | Description |
 | :--- | :---: | :--- |
-| **Data Collection** | ✅ Implemented | API crawler fetches log records and saves raw JSON with card levels. |
-| **Knowledge Base** | ✅ Implemented | Combat classification schema mapping for all 122 playable cards. |
-| **Feature Engineering** | ✅ Implemented | Extracts 12 structural/combat deck indices. |
-| **Preprocessing** | ✅ Implemented | Aggregates and clean-splits database records into Parquet format. |
-| **Model Training** | 🚧 In Progress | Baseline constant models and XGBoost training pipeline prototype. |
-| **Evaluation Suite** | 📅 Planned | Calibration curves, Brier score mapping, and SHAP explanations. |
-| **Deployment API** | 📅 Planned | FastAPI microservice exposing matchup probability endpoints. |
+| **Data Collection** | Implemented | BFS crawler writes battle details, raw JSON, and card levels. |
+| **Knowledge Base** | Implemented | Tactical maps and role tags defined for all 122 cards (including *Ronin*). |
+| **Feature Engineering** | Implemented | Computes average elixir, spells/buildings counts, and durability/damage indices. |
+| **Preprocessing** | Implemented | Cleans duplicates and transforms SQLite rows into Parquet matrices. |
+| **Model Training** | In Progress | Baseline constant models and XGBoost prototype classifier. |
+| **Evaluation Suite** | Planned | Brier score calculation, calibration plots, and SHAP visualizations. |
+| **Deployment API** | Planned | Microservice backend exposing predict endpoints. |
 
 ---
 
-## 8. Development Roadmap
+## 9. Development Roadmap
 
 ### Completed
 - [x] Create seed-based BFS player crawler.
@@ -120,13 +155,13 @@ This project overcomes these limitations by utilizing **engineered gameplay feat
 
 ---
 
-## 9. Installation
+## 10. Installation
 
-Clone the repository and install the dependencies:
+Clone the repository and install dependencies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/clash-royale-ml.git
+git clone https://github.com/apurvaanandbit1-sys/clash-royale-ml.git
 cd clash-royale-ml
 
 # Create and activate a virtual environment
@@ -137,28 +172,28 @@ source .venv/bin/activate  # On macOS/Linux
 # Install required dependencies
 pip install -r requirements.txt
 
-# Create a local environment file (.env) and add your credentials:
-# CR_API_KEY=your_official_clash_royale_api_developer_key
+# Create a local .env file in the root directory:
+# CR_API_KEY=your_clash_royale_api_developer_key
 ```
 
 ---
 
-## 10. Running the Project
+## 11. Running the Project
 
 ### Collect Battles
-To run the database crawler and populate the SQLite database:
+Run the crawler to pull battle logs and populate the SQLite database:
 ```bash
 python collector/collector.py
 ```
 
 ### Preprocess Data
-To load matches from the database, apply feature engineering, and output Parquet files:
+Run the preprocessing script to clean matches, extract engineered features, and export Parquet files:
 ```bash
 python -m preprocessing.preprocess
 ```
 
 ### Run Tests
-To run unit tests verifying database, library, and feature extraction states:
+Execute the unit tests to check database connections, card library lengths, and feature extractions:
 ```bash
 python tests/test_database.py
 python -m tests.test_card_library
@@ -167,20 +202,27 @@ python tests/test_feature_engine.py
 
 ---
 
-## 11. Future Work
+## 12. Future Improvements
 
-* **Symmetric Augmentation**: Mirror matches (`A vs B` and `B vs A`) to double training size and ensure prediction symmetry.
-* **Leak-Proof Splitting**: Enforce group-aware chronological validation to prevent leakage of identical matchups across splits.
-* **Matchup-Aware Interactions**: Add feature interactions capturing specific counter relationships (e.g. spell-to-troop ratios).
-* **Probability Calibration**: Calibrate model probabilities using Platt scaling or Isotonic regression to align outputs with real-world win rates.
-* **Model Explainability**: Add SHAP force plots to interpret feature contributions per prediction.
+*   **Symmetric Augmentation**: Mirror decks (`A vs B` and `B vs A`) to double dataset volume and ensure prediction symmetry.
+*   **Leak-Proof Splitting**: Group-aware chronological validation splits to prevent match pair leaks.
+*   **Matchup-Aware Interactions**: Add feature interactions targeting specific counter rules (e.g. spell-to-troop counter indices).
+*   **Probability Calibration**: Apply Platt scaling or Isotonic regression to align raw logits with empirical win rates.
+*   **Model Explainability**: Add SHAP summary plots to show feature impact on predicted outcomes.
+*   **FastAPI Deployment**: Expose predicted win probability endpoints.
 
 ---
 
-## 12. Acknowledgements
+## 13. License
 
-* **Official Clash Royale API**: Source of raw battle logs.
-* **Supercell**: Developers of Clash Royale.
-* **RoyaleAPI**: Taxonomy and community card metadata reference.
+License to be added.
+
+---
+
+## 14. Acknowledgements
+
+*   **Official Clash Royale API**: Data source for battle log logs.
+*   **Supercell**: Developer of Clash Royale.
+*   **RoyaleAPI**: Taxonomy and community metadata reference.
 
 *Disclaimer: This is an independent educational/research project and is not affiliated with, endorsed by, or associated with Supercell. Clash Royale assets and trademarks are properties of Supercell.*
