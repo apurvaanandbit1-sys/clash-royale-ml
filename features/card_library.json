@@ -934,6 +934,17 @@
         "hero_icon_url": null,
         "evolution_icon_url": null
     },
+    "26000106": {
+        "id": 26000106,
+        "name": "Ronin",
+        "elixir": 5,
+        "rarity": "legendary",
+        "max_level": 16,
+        "max_evolution_level": 0,
+        "icon_url": "https://api-assets.clashroyale.com/cards/300/X0dTFs7OGUavreDEzOtYd_YNZ8Zly6qgAE-dd-bNfWU.png",
+        "hero_icon_url": null,
+        "evolution_icon_url": null
+    },
     "27000000": {
         "id": 27000000,
         "name": "Cannon",

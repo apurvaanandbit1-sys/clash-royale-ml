@@ -4689,6 +4689,66 @@
             "champion"
         ]
     },
+    "Ronin": {
+        "structural": {
+            "card_type": "TROOP",
+            "movement_type": "GROUND",
+            "movement_speed": "FAST",
+            "attack_style": "MELEE",
+            "targets": "GROUND"
+        },
+        "combat": {
+            "hp_level": "HIGH",
+            "dps_level": "HIGH",
+            "attack_speed": "MEDIUM",
+            "attack_range": "MELEE",
+            "splash_damage": false,
+            "piercing_attack": false,
+            "chain_attack": false,
+            "can_attack_air": false,
+            "can_attack_ground": true,
+            "charge": false,
+            "knockback": false,
+            "reset": false
+        },
+        "abilities": {
+            "death_damage": false,
+            "spawn_damage": false,
+            "spawn_units": null,
+            "heal": false,
+            "freeze": false,
+            "reset": false,
+            "dash": false,
+            "chain_attack": false,
+            "rage_aura": false,
+            "evolution_ability": false,
+            "unique_abilities": [
+                "Parry"
+            ]
+        },
+        "strategic": {
+            "primary_role": "MINI_TANK",
+            "secondary_roles": [
+                "TANK_KILLER",
+                "DEFENSE",
+                "OFFENSE"
+            ],
+            "win_condition": false,
+            "support_card": true,
+            "cycle_card": false,
+            "archetypes": []
+        },
+        "tags": [
+            "troop",
+            "ground",
+            "melee",
+            "tank_killer",
+            "high_damage",
+            "defense",
+            "single_target",
+            "legendary"
+        ]
+    },
     "Cannon": {
         "structural": {
             "card_type": "BUILDING",
