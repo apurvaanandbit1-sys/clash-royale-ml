@@ -1,5 +1,6 @@
 import json
 from hashlib import sha256
+from datetime import datetime, timezone
 
 
 class BattleParser:
@@ -11,6 +12,14 @@ class BattleParser:
         """
         deck = sorted(card["id"] for card in cards)
         return json.dumps(deck)
+
+    @staticmethod
+    def _extract_card_levels(cards):
+        """
+        Extract card IDs and their levels, return as a JSON-serialized dictionary.
+        """
+        levels = {str(card["id"]): card["level"] for card in cards}
+        return json.dumps(levels)
 
     @staticmethod
     def _generate_battle_id(player_tag, opponent_tag, battle_time):
@@ -64,5 +73,21 @@ class BattleParser:
 
             "winner": "player" if player_crowns > opponent_crowns else "opponent",
 
-            "win": int(player_crowns > opponent_crowns)
+            "win": int(player_crowns > opponent_crowns),
+
+            "raw_battle_json": json.dumps(battle),
+
+            "player_card_levels": BattleParser._extract_card_levels(team["cards"]),
+
+            "opponent_card_levels": BattleParser._extract_card_levels(opponent["cards"]),
+
+            "player_king_level": None,
+
+            "opponent_king_level": None,
+
+            "arena_name": battle.get("arena", {}).get("name", "unknown"),
+
+            "collector_version": 2,
+
+            "api_fetch_time": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         }

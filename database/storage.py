@@ -51,7 +51,23 @@ def create_database():
 
         winner TEXT,
 
-        win INTEGER
+        win INTEGER,
+
+        raw_battle_json TEXT,
+
+        player_card_levels TEXT,
+
+        opponent_card_levels TEXT,
+
+        player_king_level INTEGER,
+
+        opponent_king_level INTEGER,
+
+        arena_name TEXT,
+
+        collector_version INTEGER,
+
+        api_fetch_time TEXT
 
     );
     """)

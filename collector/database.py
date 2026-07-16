@@ -190,7 +190,16 @@ class Database:
                 opponent_deck,
 
                 winner,
-                win
+                win,
+
+                raw_battle_json,
+                player_card_levels,
+                opponent_card_levels,
+                player_king_level,
+                opponent_king_level,
+                arena_name,
+                collector_version,
+                api_fetch_time
             )
 
             VALUES
@@ -215,7 +224,16 @@ class Database:
                 :opponent_deck,
 
                 :winner,
-                :win
+                :win,
+
+                :raw_battle_json,
+                :player_card_levels,
+                :opponent_card_levels,
+                :player_king_level,
+                :opponent_king_level,
+                :arena_name,
+                :collector_version,
+                :api_fetch_time
             )
             """,
             battle
@@ -251,7 +269,16 @@ class Database:
                 opponent_deck,
 
                 winner,
-                win
+                win,
+
+                raw_battle_json,
+                player_card_levels,
+                opponent_card_levels,
+                player_king_level,
+                opponent_king_level,
+                arena_name,
+                collector_version,
+                api_fetch_time
             )
 
             VALUES
@@ -276,7 +303,16 @@ class Database:
                 :opponent_deck,
 
                 :winner,
-                :win
+                :win,
+
+                :raw_battle_json,
+                :player_card_levels,
+                :opponent_card_levels,
+                :player_king_level,
+                :opponent_king_level,
+                :arena_name,
+                :collector_version,
+                :api_fetch_time
             )
             """,
             battles
