@@ -30,3 +30,15 @@ downloads/
 
 # Local reports
 project_inspection_report.pdf
+
+# Generated datasets
+*.parquet
+
+# Logs
+logs/
+
+# Personal project notes
+docs/project_handover_report.md
+
+# Local downloads
+downloads/
