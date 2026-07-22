@@ -1,0 +1,17 @@
+# Clash Royale ML Model Configurations
+
+model:
+  embedding_dim: 16
+  pooling_type: "mean"     # Options: "mean", "sum"
+  hidden_dim: 32
+  projection_dim: 16
+  dropout: 0.1
+  use_layernorm: true
+  init_type: "xavier_uniform"  # Options: "xavier_uniform", "xavier_normal"
+
+comparison:
+  init_scale: 0.02
+
+skill:
+  scaling_factor: 0.001
+  hidden_dim: 8

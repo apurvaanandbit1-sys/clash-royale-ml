@@ -23,7 +23,7 @@ def generate_augmented_dataset():
     
     try:
         # Match your exact table 'battles' and column schemas
-        df = pd.read_sql_query("SELECT player_deck, opponent_deck, win FROM battles", conn)
+        df = pd.read_sql_query("SELECT player_deck, opponent_deck, win, battle_time, player_trophies, opponent_trophies FROM battles ORDER BY battle_time ASC", conn)
     except Exception as e:
         print(f"Database Query Error: {e}")
         return None

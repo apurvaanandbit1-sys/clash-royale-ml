@@ -1,0 +1,33 @@
+# Clash Royale ML Training Configuration
+
+optimizer:
+  type: "AdamW"
+  lr: 0.001
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+  grad_clipping: 1.0
+
+scheduler:
+  type: "ReduceLROnPlateau"  # Options: "ReduceLROnPlateau", "CosineAnnealingLR"
+  patience: 2
+  factor: 0.5
+  min_lr: 0.00001
+  # For CosineAnnealingLR:
+  T_max: 10
+
+early_stopping:
+  patience: 5
+  min_delta: 0.0001
+
+checkpoint:
+  dir: "models/checkpoints"
+  save_every_epoch: true
+
+logging:
+  metrics_csv: "logs/training_metrics.csv"
+  metrics_json: "logs/training_metrics.json"
+  manifest_json: "logs/experiment_manifest.json"
+
+training:
+  epochs: 5
+  seed: 42

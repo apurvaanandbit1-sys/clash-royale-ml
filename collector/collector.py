@@ -73,6 +73,11 @@ def main():
     with Database() as db:
 
         initialize_queue(db)
+        
+        # Task 3: Reset any stuck 'processing' tags back to 'pending'
+        print("Recovering queue state from any previous interruptions...")
+        db.recover_queue()
+        db.commit()
 
         processed = 0
 
@@ -91,8 +96,31 @@ def main():
             print(f"Crawl Depth      : {depth}")
 
             db.set_processing(tag)
+            db.commit()  # Save queue state immediately before network operations
 
-            battles = api.get_battle_log(tag)
+            # Task 2: Handle bounded retry exhaustion
+            try:
+                battles = api.get_battle_log(tag)
+            except Exception as e:
+                print(f"CRITICAL: Bounded retries exhausted for {tag}: {e}")
+                # Reset this player back to pending so they can be retried on next start
+                db.cursor.execute(
+                    "UPDATE crawl_queue SET status='pending' WHERE player_tag=?",
+                    (tag,)
+                )
+                db.commit()
+                print("Database state committed. Terminating collector loop.")
+                raise e
+
+            # Task 1: Handle failed / None responses gracefully
+            if battles is None:
+                print(f"WARNING: Failed to download battles for {tag}. Skipping player.")
+                db.finish_player(tag)
+                db.mark_processed(tag)
+                db.commit()
+                processed += 1
+                time.sleep(REQUEST_DELAY)
+                continue
 
             print(f"Downloaded {len(battles)} battles")
 
@@ -144,8 +172,6 @@ def main():
 
             if processed % COMMIT_INTERVAL == 0:
                 db.commit()
-
-
 
             stats = db.get_stats()
 

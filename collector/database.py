@@ -1,8 +1,11 @@
 import sqlite3
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "data" / "clashroyale.db"
+try:
+    from config.settings import DB_PATH
+except ImportError:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    DB_PATH = BASE_DIR / "data" / "clashroyale.db"
 
 
 class Database:
@@ -75,6 +78,19 @@ class Database:
         # ======================================================
     # QUEUE METHODS
     # ======================================================
+
+    def recover_queue(self):
+        """
+        On startup, reset all 'processing' nodes back to 'pending'.
+        This ensures interrupted runs can resume correctly.
+        """
+        self.cursor.execute(
+            """
+            UPDATE crawl_queue
+            SET status='pending'
+            WHERE status='processing'
+            """
+        )
 
     def enqueue_player(self, tag, depth=0):
 

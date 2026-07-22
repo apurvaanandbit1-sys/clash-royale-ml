@@ -5,8 +5,11 @@ import sqlite3
 # Database Configuration
 # ==========================================================
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "data" / "clashroyale.db"
+try:
+    from config.settings import DB_PATH
+except ImportError:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    DB_PATH = BASE_DIR / "data" / "clashroyale.db"
 
 # Create data directory if it doesn't exist
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)

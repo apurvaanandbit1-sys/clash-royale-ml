@@ -39,6 +39,11 @@ class BattleParser:
         team = battle["team"][0]
         opponent = battle["opponent"][0]
 
+        # Validate that both players have exactly 8-card decks.
+        # Draft modes or special events can return non-8 cards.
+        if "cards" not in team or len(team["cards"]) != 8 or "cards" not in opponent or len(opponent["cards"]) != 8:
+            return None
+
         battle_time = battle["battleTime"]
 
         battle_id = BattleParser._generate_battle_id(

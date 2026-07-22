@@ -1,0 +1,15 @@
+# Clash Royale ML Dataset Configuration
+
+data:
+  dataset_path: "matches_with_features.parquet"
+  card_library_path: "features/card_library.json"
+
+loader:
+  batch_size: 256
+  num_workers: 0          # Set to 0 for Windows platforms to avoid spawn overhead
+  pin_memory: true
+  seed: 42
+  shuffle_train: true
+
+augmentation:
+  probability: 0.5

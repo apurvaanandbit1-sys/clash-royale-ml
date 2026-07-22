@@ -17,6 +17,13 @@ HEADERS = {
 }
 
 
+try:
+    from config.settings import MAX_RETRIES, RETRY_DELAY
+except ImportError:
+    MAX_RETRIES = 5
+    RETRY_DELAY = 3
+
+
 class ClashRoyaleAPI:
     def __init__(self, delay=0.25):
         self.delay = delay
@@ -25,15 +32,18 @@ class ClashRoyaleAPI:
         """
         Makes a safe request to the Clash Royale API.
 
-        Automatically retries if:
+        Automatically retries with exponential backoff if:
             - Rate limited (429)
             - Temporary server errors
+            - Network Exceptions
+        Raises an exception if retries are exhausted.
         """
 
         url = BASE_URL + endpoint
+        retries = 0
+        current_delay = RETRY_DELAY
 
-        while True:
-
+        while retries < MAX_RETRIES:
             try:
                 response = requests.get(
                     url,
@@ -46,20 +56,28 @@ class ClashRoyaleAPI:
                     return response.json()
 
                 elif response.status_code == 429:
-                    print("Rate limited. Waiting 5 seconds...")
-                    time.sleep(5)
+                    print(f"Rate limited [429]. Retrying in {current_delay} seconds...")
+                    time.sleep(current_delay)
+                    retries += 1
+                    current_delay *= 2  # Exponential backoff
 
                 elif response.status_code >= 500:
-                    print(f"Server Error {response.status_code}. Retrying...")
-                    time.sleep(3)
+                    print(f"Server Error {response.status_code}. Retrying in {current_delay} seconds...")
+                    time.sleep(current_delay)
+                    retries += 1
+                    current_delay *= 2
 
                 else:
                     print(f"Request Failed [{response.status_code}] : {endpoint}")
                     return None
 
             except requests.exceptions.RequestException as e:
-                print("Network Error:", e)
-                time.sleep(5)
+                print(f"Network Error: {e}. Retrying in {current_delay} seconds...")
+                time.sleep(current_delay)
+                retries += 1
+                current_delay *= 2
+
+        raise Exception(f"API request failed after {MAX_RETRIES} retries for endpoint: {endpoint}")
 
     # --------------------------------------------------------
 

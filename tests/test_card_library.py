@@ -74,10 +74,7 @@ def test_card_library():
             f"Card ID {card_id} has an empty name."
         )
 
-print("✅ Card library integrity test passed.")
+    print("[OK] Card library integrity test passed.")
 
 if __name__ == "__main__":
     test_card_library()
-
-
-   

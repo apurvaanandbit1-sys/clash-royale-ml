@@ -118,9 +118,22 @@ class FeatureEngine:
         """Compute the average elixir cost of an 8-card deck."""
 
         total_elixir = 0
+        non_mirror_cards = 0
 
         for card in cards:
-            total_elixir += card["library"]["elixir"]
+            val = card["library"].get("elixir")
+            if val is not None:
+                total_elixir += val
+                non_mirror_cards += 1
+
+        if non_mirror_cards == 0:
+            return 0.0
+
+        # If Mirror (or any other variable elixir card) is in the deck,
+        # we approximate its cost as the average of the other cards in the deck
+        if non_mirror_cards < len(cards):
+            avg_val = total_elixir / non_mirror_cards
+            total_elixir += (len(cards) - non_mirror_cards) * avg_val
 
         return total_elixir / len(cards)
     
